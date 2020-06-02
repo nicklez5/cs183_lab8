@@ -1,0 +1,8 @@
+#!/bin/bash
+cd /var/log
+File=secure
+tag=$(tail -n 5 secure)
+if [[ $tag == *"Failed password for dummyuser"* ]]; then
+	echo "Attack detected!"
+fi
+
